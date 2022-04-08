@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" sizeclass="2" type="collection">
+        <element label="Requested for" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element choice="3" default="Legal" label="Request type" max_length="40" name="u_request_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Human Resources" sequence="100" value="hr"/>
+                <element inactive_on_update="false" label="Facilities" sequence="200" value="facilities"/>
+                <element inactive_on_update="false" label="Legal" sequence="300" value="legal"/>
+                <element inactive_on_update="false" label="IT Services" sequence="400" value="it_services"/>
+            </choice>
+        </element>
+        <element choice="3" default="legal_1" label="What needed" max_length="40" name="u_what_needed" type="choice">
+            <choice>
+                <element dependent_value="hr" inactive_on_update="false" label="Human Resources 1" sequence="0" value="hr_1"/>
+                <element dependent_value="hr" inactive_on_update="false" label="Human Resources 2" sequence="1" value="hr_2"/>
+                <element dependent_value="facilities" inactive_on_update="false" label="Facilities 1" sequence="2" value="facilities_1"/>
+                <element dependent_value="facilities" inactive_on_update="false" label="Facilities 2" sequence="3" value="facilities_2"/>
+                <element dependent_value="legal" inactive_on_update="false" label="Legal 1" sequence="4" value="legal_1"/>
+                <element dependent_value="legal" inactive_on_update="false" label="Legal 2" sequence="5" value="legal_2"/>
+                <element dependent_value="it_services" inactive_on_update="false" label="IT - Software" sequence="6" value="it_software"/>
+                <element dependent_value="it_services" inactive_on_update="false" label="IT - Hardware" sequence="7" value="it_hardware"/>
+            </choice>
+        </element>
+        <element label="When needed" max_length="40" name="u_when_needed" type="glide_date"/>
+    </element>
+</database>
